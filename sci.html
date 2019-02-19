@@ -1,0 +1,245 @@
+<!doctype html>
+<html>
+<head>
+
+ <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <style>
+   #nm{
+  	text-align: center;
+  	margin-left: 5px;
+  	width:15%;
+  	color: black;
+  	border:2px solid black;
+  	background: yellow;
+  }
+  #op{
+  	text-align: center;
+  	margin-left: 5px;
+  	font-size: 25px;
+  	width:15%;
+  	color: black;
+  	border:2px solid black;
+  	background:  lightgrey;
+  }
+  .patt{
+  	font-size: 25px;
+  	margin-top: 20%;
+  	text-align: center;
+  	
+  }
+  .patt {
+  	background: grey;
+  	margin: 30%;
+
+  }
+  #lcd{
+  	width:68%;
+
+  	margin-top: 5%;
+  	color: black;
+  	text-align: right;
+  	border:2px solid black;
+  }
+</style>
+
+<body>
+
+ <div class="container-fluid "style="background: grey;">
+ 	<form name="lcdform">  
+     
+     
+      
+     <div class="patt">
+     	 <input id="display" name="display" value="" size="28" maxlength="25"> <br><br> 
+         <input type="button" value="1" id="nm"name="" onclick="numone()"> 
+    	 <input type="button" value="2"id="nm" onclick="numtwo()"> 
+    	 <input type="button" value="3" id="nm"onclick="numthree()">
+    	 <input type="button" value="+" id="op" onclick="plus()">
+    	 <INPUT TYPE="button" VALUE="cos" style="text-align: center;margin-left: 5px;font-size: 25px;width:15%;color: black;border:2px solid black;background:  lightgrey;" ONCLICK="if (checkNum(this.form.display.value)) { cos(this.form) }">
+    	<br><br>    
+
+
+
+    	 <input type="button" value="4" id="nm" onclick="numfour()">  
+    	 <input type="button" value="5" id="nm" onclick="numfive()">
+    	 <input type="button" value="6" id="nm" onclick="numsix()">
+    	 <input type="button" value="-" id="op" onclick="sub()">
+    	 <INPUT TYPE="button" VALUE="tan" style="text-align: center;margin-left: 5px;font-size: 25px;width:15%;color: black;border:2px solid black;background:  lightgrey;" ONCLICK="if (checkNum(this.form.display.value)) { tan(this.form) }">
+    	 <br><br>  
+
+
+    	 <input type="button" value="7" id="nm" onclick="numseven()">
+    	 <input type="button" value="8" id="nm" onclick="numeight()">  
+    	 <input type="button" value="9" id="nm" onclick="numnine()">
+    	 <input type="button" value="*" id="op" onclick="mul()"> 
+    	 <INPUT TYPE="button" VALUE="sin" style="text-align: center;margin-left: 5px;font-size: 25px;width:15%;color: black;border:2px solid black;background:  lightgrey;" ONCLICK="if (checkNum(this.form.display.value)) { sin(this.form) }">
+      <br><br>
+
+
+       
+        <input type="button" value="0" id="nm" onclick="numzero()"> 
+        <input type="button" value="c" id="op" onclick="clr()"> 
+        <input type="button" value="/" id="op" onclick="divide()"> 
+        <input type="button" value="=" id="op" onclick="equalsto()"> <br><br>
+
+
+
+
+           <input type="button" value="(" id="op" onclick="open()">
+           <input type="button" value=")" id="op" onclick="close()">
+           <input type="button" value="." id="op" onclick="dot()">
+           <input type="button" value="sqt()" id="op" onclick="Sqt()">
+    </div>
+  
+    </form> 
+    </div>  
+       <SCRIPT LANGUAGE="JavaScript">
+      function addChar(input, character) {
+	   if(input.value == null || input.value == "0")
+		input.value = character
+	    else
+		input.value += character
+        }
+
+        function cos(form) {
+	    form.display.value = Math.cos(form.display.value);
+        }
+  
+      
+       function sin(form) {
+	   form.display.value = Math.sin(form.display.value);
+        }
+       function numone()
+        {
+        	document.lcdform.display.value += "1";
+        }
+
+         function numtwo()
+        {
+        	document.lcdform.display.value+="2";
+        }
+         function numthree()
+        {
+        	document.lcdform.display.value+="3";
+        }
+         function numfour()
+        {
+        	document.lcdform.display.value+="4";
+        }
+         function numfive()
+        {
+        	document.lcdform.display.value+="5";
+        }
+         function numsix()
+        {
+        	document.lcdform.display.value+="6";
+        }
+         function numseven()
+        {
+        	document.lcdform.display.value+="7";
+        }
+         function numeight()
+        {
+        	document.lcdform.display.value+="8";
+        }
+         function numnine()
+        {
+        	document.lcdform.display.value+="9";
+        }
+         function plus()
+        {
+        	document.lcdform.display.value+="+";
+        }
+         function sub()
+        {
+        	document.lcdform.display.value+="-";
+        }
+         function cap()
+        {
+        	document.lcdform.display.value+="^";
+        }
+         function mul()
+        {
+        	document.lcdform.display.value+="*";
+        }
+         function divide()
+        {
+        	document.lcdform.display.value+="/";
+        }
+         function sqrt()
+        {
+        	document.lcdform.display.value+="sqrt()";
+        }
+         function per()
+        {
+        	document.lcdform.display.value+="%";
+        }
+         function numzero()
+        {
+        	document.lcdform.display.value+="0";
+        }
+         function numdobuzero()
+        {
+        	document.lcdform.display.value+="00";
+        }
+         function clr()
+        {
+        	document.lcdform.display.value=" ";
+        }
+         function equalsto()
+        {
+        	var sub=eval(document.lcdform.display.value)
+        	document.lcdform.display.value=sub;
+        }
+
+    
+        function cos(form) {
+	form.display.value = Math.cos(form.display.value);
+}
+         function Sin()
+        {
+        	var sub=eval(document.lcdform.lcd.value)
+        	document.lcdform.lcd.value=sub;
+        }
+         function tan(form) {
+	    form.display.value = Math.tan(form.display.value);
+        }
+         function open()
+        {
+        	document.lcdform.display.value+="(";
+        }
+         function close()
+        {
+        	document.lcdform.display.value+=")";
+        }
+         function dot()
+        {
+        	document.lcdform.display.value+=".";
+        }
+         function Sqt()
+        {
+        	function square(lcdform) {
+	lcdform.lcd.value = eval(lcdform.lcd.value) * eval(lcdform.lcd.value)
+}
+        }
+
+  function checkNum(str) {
+	for (var i = 0; i < str.length; i++) {
+		var ch = str.substring(i, i+1)
+		if (ch < "0" || ch > "9") {
+			if (ch != "/" && ch != "*" && ch != "+" && ch != "-" && ch != "."
+				&& ch != "(" && ch!= ")") {
+				alert("invalid entry!")
+				return false
+				}
+			}
+		}
+		return true
+}
+</SCRIPT>
+	</body>
+</html>
